@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Car, Users, Star, ArrowRight, MapPin, Calendar, Shield, Search, User, Menu } from 'lucide-react';
+import { Car, Users, ArrowRight, MapPin, Calendar, Shield, Search, Menu } from 'lucide-react';
 
-// Système de couleurs moderne inspiré des leaders du covoiturage
 const CocovoitTheme = {
-    // Couleur primaire extraite du logo (bleu-vert moderne)
     primary: '#00B8A9',
     primaryHover: '#00A396',
     primaryLight: '#E6F9F7',
 
-    // Couleur secondaire (orange subtil du logo)
     secondary: '#FF6B35',
     secondaryHover: '#E55A2B',
     secondaryLight: '#FFF0EC',
 
-    // Neutres sophistiqués (inspirés de BlaBlaCar/Uber)
     gray900: '#1A1D29',
     gray800: '#2D3748',
     gray700: '#4A5568',
@@ -22,7 +18,6 @@ const CocovoitTheme = {
     gray200: '#EDF2F7',
     gray100: '#F7FAFC',
 
-    // Couleurs fonctionnelles
     white: '#FFFFFF',
     success: '#48BB78',
     warning: '#ED8936',
@@ -33,7 +28,6 @@ const App: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
-    // Gestion du scroll pour l'effet navbar (comme sur BlaBlaCar)
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
@@ -42,7 +36,6 @@ const App: React.FC = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Fonctionnalités mises en avant (inspirées des vraies plateformes)
     const features = [
         {
             icon: <Search className="w-6 h-6" />,
@@ -66,7 +59,6 @@ const App: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-white">
-            {/* Header moderne avec effet de scroll (style Uber/BlaBlaCar) */}
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
                     scrolled
@@ -76,7 +68,6 @@ const App: React.FC = () => {
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="flex items-center justify-between h-16">
-                        {/* Logo épuré (inspiré des leaders) */}
                         <div className="flex items-center space-x-3">
                             <div
                                 className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
@@ -92,7 +83,6 @@ const App: React.FC = () => {
               </span>
                         </div>
 
-                        {/* Navigation desktop */}
                         <nav className="hidden md:flex items-center space-x-8">
                             <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
                                 Rechercher
@@ -105,7 +95,6 @@ const App: React.FC = () => {
                             </a>
                         </nav>
 
-                        {/* Actions utilisateur */}
                         <div className="flex items-center space-x-4">
                             <button className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
                                 Se connecter
@@ -117,7 +106,6 @@ const App: React.FC = () => {
                                 S'inscrire
                             </button>
 
-                            {/* Menu mobile */}
                             <button
                                 className="md:hidden p-2"
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -129,11 +117,9 @@ const App: React.FC = () => {
                 </div>
             </header>
 
-            {/* Section Hero épurée (inspirée de BlaBlaCar) */}
             <section className="pt-24 pb-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="text-center max-w-4xl mx-auto">
-                        {/* Titre principal moderne */}
                         <h1
                             className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
                             style={{ color: CocovoitTheme.gray900 }}
@@ -150,7 +136,6 @@ const App: React.FC = () => {
                             Simple, sûr et surprenant.
                         </p>
 
-                        {/* Barre de recherche principale (style BlaBlaCar/Uber) */}
                         <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 mb-8 max-w-4xl mx-auto">
                             <div className="grid md:grid-cols-4 gap-4">
                                 <div className="space-y-2">
@@ -200,7 +185,6 @@ const App: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Actions alternatives */}
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button
                                 className="px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-all flex items-center justify-center space-x-2"
@@ -228,7 +212,6 @@ const App: React.FC = () => {
                 </div>
             </section>
 
-            {/* Section fonctionnalités modernes */}
             <section className="py-20" style={{ backgroundColor: CocovoitTheme.gray100 }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="text-center mb-16">
@@ -285,7 +268,6 @@ const App: React.FC = () => {
                 </div>
             </section>
 
-            {/* Section CTA finale */}
             <section
                 className="py-20"
                 style={{ backgroundColor: CocovoitTheme.primary }}
@@ -314,7 +296,6 @@ const App: React.FC = () => {
                 </div>
             </section>
 
-            {/* Footer épuré */}
             <footer
                 className="py-16"
                 style={{ backgroundColor: CocovoitTheme.gray900 }}
